@@ -1,12 +1,8 @@
+# VisualStudio / VSCode
+/.vs/
+/*.wsuo
+/.vscode/
+
 # IntelliJ
-/.idea/
-*.iml
-
-# Maven/Java
-/backend/target/
-/backend/.mvn/
-/backend/mvnw*
-
-# Node/React
-/frontend/node_modules/
-/frontend/build/
+/backend/buzz/.idea/
+/*.iml
