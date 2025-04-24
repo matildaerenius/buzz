@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -31,22 +32,20 @@ public class UserController {
     @GetMapping("/users")
     public List<User> getUser() {
 
-        List<User> users = new ArrayList<>();
-
-        User user1 = new User(1, "Matilda", "Erenius", "matilda@gmail.com","12345");
-        User user2 = new User(2, "Test", "testtest", "test@gmail.com","12345");
-        users.add(user1);
-        users.add(user2);
+        List<User> users = userRepository.findAll();
         return users;
     }
 
     @GetMapping("/users/{userId}")
-    public User getUserById(@PathVariable("userId") int id) {
+    public User getUserById(@PathVariable("userId") int id) throws Exception {
 
-        User user1 = new User(1, "Matilda", "Erenius", "matilda@gmail.com","12345");
-        user1.setId(id);
+        Optional<User> user = userRepository.findById(id);
 
-        return user1;
+        if(user.isPresent()) {
+            return user.get();
+        }
+
+        throw new Exception("user not exist with userid"+ id);
     }
 
     @PutMapping("/users")
