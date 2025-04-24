@@ -45,27 +45,45 @@ public class UserController {
             return user.get();
         }
 
-        throw new Exception("user not exist with userid"+ id);
+        throw new Exception("user not exist with userid "+ id);
     }
 
-    @PutMapping("/users")
-    public User updateUser(@RequestBody User user) {
-        User user1 = new User(1, "Matilda", "Erenius", "matilda@gmail.com","12345");
+    @PutMapping("/users/{userId}")
+    public User updateUser(@RequestBody User user, @PathVariable int userId) throws Exception {
+
+        Optional<User> user1 = userRepository.findById(userId);
+
+        if(user1.isEmpty()) {
+            throw new Exception("user not exist with id "+ userId);
+        }
+
+        User oldUser = user1.get();
 
         if(user.getFirstName()!=null) {
-            user1.setFirstName(user.getFirstName());
+            oldUser.setFirstName(user.getFirstName());
         }
         if(user.getLastName()!=null) {
-            user1.setLastName(user.getLastName());
+            oldUser.setLastName(user.getLastName());
         }
         if(user.getEmail()!=null) {
-            user1.setEmail(user.getEmail());
+            oldUser.setEmail(user.getEmail());
         }
-        return user1;
+
+        User updatedUser = userRepository.save(oldUser);
+
+        return updatedUser;
     }
 
     @DeleteMapping("users/{userId}")
-    public String deleteUser(@PathVariable("userId") int userId) {
+    public String deleteUser(@PathVariable("userId") int userId) throws Exception {
+
+        Optional<User> user = userRepository.findById(userId);
+
+        if(user.isEmpty()) {
+            throw new Exception("user not exist with id "+ userId);
+        }
+        userRepository.delete(user.get());
+
         return "user deleted successfully with id " + userId;
     }
 }
