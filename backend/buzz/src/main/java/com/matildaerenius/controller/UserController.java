@@ -49,16 +49,17 @@ public class UserController {
         return updatedUser;
     }
 
-    @DeleteMapping("users/{userId}")
-    public String deleteUser(@PathVariable("userId") int userId) throws Exception {
+    @PutMapping("/users/follow/{userId1}/{userId2}")
+    public User followUserHandler(@PathVariable int userId1, @PathVariable int userId2) throws Exception {
 
-        Optional<User> user = userRepository.findById(userId);
-
-        if(user.isEmpty()) {
-            throw new Exception("user not exist with id "+ userId);
-        }
-        userRepository.delete(user.get());
-
-        return "user deleted successfully with id " + userId;
+        User user = userService.followUser(userId1, userId2);
+        return user;
     }
+
+    @GetMapping("/users/search")
+    public List<User> searchUser(@RequestParam("query") String query) {
+        List<User> users = userService.searchUser(query);
+        return users;
+    }
+
 }
