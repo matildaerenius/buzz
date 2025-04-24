@@ -1,9 +1,7 @@
 package com.matildaerenius.controller;
 
 import com.matildaerenius.models.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +9,7 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @GetMapping("/user")
+    @GetMapping("/users")
     public List<User> getUser() {
 
         List<User> users = new ArrayList<>();
@@ -30,5 +28,17 @@ public class UserController {
         user1.setId(id);
 
         return user1;
+    }
+
+    @PostMapping("/users")
+    public User createUser(@RequestBody User user) {
+        User newUser = new User();
+        newUser.setEmail(user.getEmail());
+        newUser.setFirstName(user.getFirstName());
+        newUser.setLastName(user.getLastName());
+        newUser.setPassword(user.getPassword());
+        newUser.setId(user.getId());
+
+        return newUser;
     }
 }
