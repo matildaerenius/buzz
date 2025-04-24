@@ -1,5 +1,6 @@
 package com.matildaerenius.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -10,8 +11,10 @@ public class User {
 
     @Id
     private int id;
+    @Column(name="my_name")
     private String firstName;
     private String lastName;
+    @Column(name="gmail")
     private String email;
     private String password;
 
