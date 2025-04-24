@@ -40,4 +40,5 @@ build/
 # IntelliJ
 /backend/buzz/.idea/
 /backend/buzz/.gitignore
+backend/buzz/src/main/resources/application.properties
 /*.iml
