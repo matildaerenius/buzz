@@ -24,11 +24,21 @@ public class User {
     @ElementCollection
     @CollectionTable(name="user_followers", joinColumns=@JoinColumn(name="user_id"))
     @Column(name="follower_id")
+
     private List<Integer> followers = new ArrayList<>();
     @ElementCollection
     @CollectionTable(name="user_followings", joinColumns=@JoinColumn(name="user_id"))
     @Column(name="following_id")
+
     private List<Integer> followings = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_saved_posts",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "post_id")
+    )
+    private List<Post> savedPost = new ArrayList<>();
 
 
     public User() {}
@@ -106,5 +116,13 @@ public class User {
 
     public void setFollowings(List<Integer> followings) {
         this.followings = followings;
+    }
+
+    public List<Post> getSavedPost() {
+        return savedPost;
+    }
+
+    public void setSavedPost(List<Post> savedPost) {
+        this.savedPost = savedPost;
     }
 }
