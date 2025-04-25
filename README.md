@@ -84,7 +84,26 @@ buzz/
 
 ## Configuration
 
+Before you run the app, copy the example properties and set your real values:
+
+```bash
+cp backend/src/main/resources/application.properties.example \
+   backend/src/main/resources/application.properties
+```
 ## API Reference
+
+| Method | Path                    | Description            |
+| ------ | ----------------------- | ---------------------- |
+| GET    | `/users`                | List all users         |
+| POST   | `/users`                | Register new user      |
+| PUT    | `/users/{id}`           | Update user            |
+| DELETE | `/users/{id}`           | Delete user            |
+| GET    | `/posts`                | List all posts         |
+| POST   | `/posts/user/{userId}`  | Create a new post      |
+| PUT    | `/posts/{id}/user/{uid}`| Toggle save/like post  |
+| DELETE | `/posts/{id}/user/{uid}`| Delete a post          |
+
+For full examples and payload definitions, see [docs/API.md](docs/API.md) or import `docs/postman-collection.json`.
 
 ## Testing
 
