@@ -33,7 +33,7 @@ public class PostServiceImplementation implements PostService {
         newPost.setVideo(post.getVideo());
         newPost.setUser(user);
 
-        return newPost;
+        return postRepository.save(newPost);
     }
 
     @Override
@@ -75,10 +75,9 @@ public class PostServiceImplementation implements PostService {
         if(user.getSavedPost().contains(post)) {
             user.getSavedPost().remove(post);
         }
-        else {
-            user.getSavedPost().add(post);
-        }
+        else user.getSavedPost().add(post);
         userRepository.save(user);
+
         return post;
     }
 

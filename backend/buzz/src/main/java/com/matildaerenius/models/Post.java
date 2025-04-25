@@ -1,5 +1,6 @@
 package com.matildaerenius.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -11,19 +12,19 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String caption;
+
     private String image;
+
     private String video;
+
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
-    @ManyToMany
-    @JoinTable(
-            name = "post_likes",
-            joinColumns = @JoinColumn(name = "post_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id")
-    )
-    private List<User> liked = new ArrayList<User>();
+
+    @OneToMany
+    private List<User> liked = new ArrayList<>();
+
     private LocalDateTime createdAt;
 
     public Post() {}
@@ -93,4 +94,5 @@ public class Post {
     public void setLiked(List<User> liked) {
         this.liked = liked;
     }
+
 }

@@ -1,5 +1,6 @@
 package com.matildaerenius.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -22,22 +23,13 @@ public class User {
     private String gender;
 
     @ElementCollection
-    @CollectionTable(name="user_followers", joinColumns=@JoinColumn(name="user_id"))
-    @Column(name="follower_id")
-
     private List<Integer> followers = new ArrayList<>();
-    @ElementCollection
-    @CollectionTable(name="user_followings", joinColumns=@JoinColumn(name="user_id"))
-    @Column(name="following_id")
 
+    @ElementCollection
     private List<Integer> followings = new ArrayList<>();
 
+    @JsonIgnore
     @ManyToMany
-    @JoinTable(
-            name = "user_saved_posts",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "post_id")
-    )
     private List<Post> savedPost = new ArrayList<>();
 
 
