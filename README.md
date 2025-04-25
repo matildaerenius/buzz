@@ -23,17 +23,64 @@ A full-featured social media platform where users can create, like, save, repost
 - **Notifications**: Get notified for likes, comments, follows, and messages
   
 ## Tech Stack
-- **Backend**: Java, Spring Boot, Spring Data JPA, WebSocket  
-- **Database**: MySQL  
-- **Frontend**: React, Redux  
-- **Real-Time**:  
-- **Build & Deployment**: 
+- **Language & Framework**: Java 17, Spring Boot 3  
+- **Data**: Spring Data JPA, MySQL 8  
+- **Build**: Maven  
+- **IDE**: IntelliJ IDEA  
+- **Testing**: JUnit, Postman  
+- **(Frontend)**: React, Redux (coming)
 
 ## Project Structure
+```text
+buzz/
+└── backend/
+    ├── pom.xml
+    ├── src/
+    │   ├── main/
+    │   │   ├── java/
+    │   │   │   └── com/matildaerenius/
+    │   │   │       ├── controller/
+    │   │   │       │   ├ HomeController.java
+    │   │   │       │   ├ PostController.java
+    │   │   │       │   └ UserController.java
+    │   │   │       ├── models/
+    │   │   │       │   ├ Post.java
+    │   │   │       │   └ User.java
+    │   │   │       ├── repository/
+    │   │   │       │   ├ PostRepository.java
+    │   │   │       │   └ UserRepository.java
+    │   │   │       ├── response/
+    │   │   │       │   └ ApiResponse.java
+    │   │   │       └── service/
+    │   │   │           ├ PostService.java
+    │   │   │           ├ PostServiceImplementation.java
+    │   │   │           ├ UserService.java
+    │   │   │           └ UserServiceImplementation.java
+    │   │   └── resources/
+            └ application.properties.example
+ ```
 
 ## Prerequisites
+- Java 17+  
+- Maven 3.6+  
+- MySQL 8 (with database `buzz` created)  
+- (Later) Node.js & npm  
 
 ## Installation & Running
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/matildaerenius/buzz.git
+   cd buzz
+   ```
+2. **Start the backend**
+```bash
+  cd backend
+  mvn clean install
+  cp src/main/resources/application.properties.example src/main/resources/application.properties
+  # ← Edit src/main/resources/application.properties with your DB credentials
+  mvn spring-boot:run
+   ```
 
 ## Configuration
 
@@ -44,7 +91,13 @@ A full-featured social media platform where users can create, like, save, repost
 ## Future Development
 
 ## Contributing
+- Fork and clone the repository
+- Create a branch: feature/your-feature-name
+- Commit and push following the Conventional Commits specification
+- Open a Pull Request
 
 ## License
+MIT © Matilda Erenius
 
 ## Contact
+matildaerenius@hotmail.com · GitHub
