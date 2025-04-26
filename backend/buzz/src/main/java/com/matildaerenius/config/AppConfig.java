@@ -15,13 +15,12 @@ public class AppConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(authorize -> authorize
+        http.sessionManagement(management -> management.sessionCreationPolicy(
+                SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(Authorize -> Authorize
                         .requestMatchers("/api/**").authenticated()
-                        .anyRequest().permitAll()
-                )
-                .httpBasic(Customizer.withDefaults());
+                        .anyRequest().permitAll())
+                        .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
