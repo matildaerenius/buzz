@@ -1,5 +1,6 @@
 package com.matildaerenius.config;
 
+import io.jsonwebtoken.JwtException;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,31 +18,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class jwtValidator extends OncePerRequestFilter {
+public class JwtValidator extends OncePerRequestFilter {
 
     @Autowired
     private JwtProvider jwtProvider;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws ServletException, IOException {
 
-        String jwt = request.getHeader(jwtProvider.getJwtHeader());
+        String header = req.getHeader(jwtProvider.getJwtHeader());
 
-        if (jwt != null) {
+        if (header != null && header.startsWith("Bearer ")) {
+            String token = header.substring(7);
             try {
-                String email = jwtProvider.getEmailFromJwtToken(jwt);
-
-                List<GrantedAuthority> authorities = new ArrayList<>();
-                Authentication authentication = new UsernamePasswordAuthenticationToken(email, null, authorities);
-
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-
-            } catch (Exception e) {
-                 throw new BadCredentialsException("Invalid JWT token");
+                String email = jwtProvider.getEmailFromJwtToken(token);
+                Authentication auth = new UsernamePasswordAuthenticationToken(
+                        email, null, List.of()
+                );
+                SecurityContextHolder.getContext().setAuthentication(auth);
+            } catch (JwtException e) {
+                res.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid JWT");
+                return;
             }
         }
 
-        filterChain.doFilter(request, response);
+        chain.doFilter(req, res);
     }
 
 }
