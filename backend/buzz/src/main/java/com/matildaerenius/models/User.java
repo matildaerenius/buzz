@@ -14,7 +14,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String firstName;
     private String lastName;
@@ -35,7 +35,7 @@ public class User {
 
     public User() {}
 
-    public User(int id, String firstName, String lastName, String email, String password, String gender, List<Integer> followers, List<Integer> followings) {
+    public User(Integer id, String firstName, String lastName, String email, String password, String gender, List<Integer> followers, List<Integer> followings) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -46,11 +46,11 @@ public class User {
         this.followings = followings;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

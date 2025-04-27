@@ -16,7 +16,6 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public User registerUser(User user) {
-
         User newUser = new User();
         newUser.setEmail(user.getEmail());
         newUser.setFirstName(user.getFirstName());
