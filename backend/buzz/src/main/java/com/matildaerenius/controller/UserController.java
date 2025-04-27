@@ -56,4 +56,13 @@ public class UserController {
         return users;
     }
 
+    @GetMapping("/api/users/profile")
+    public User getUserFromToken(@RequestHeader("Authorization")String token) throws Exception {
+
+       User user = userService.findUserByJwt(token);
+       user.setPassword(null);
+
+        return user;
+    }
+
 }
