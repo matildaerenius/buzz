@@ -39,7 +39,12 @@ buzz/
     │   ├── main/
     │   │   ├── java/
     │   │   │   └── com/matildaerenius/
+    │   │   │       ├── config/
+    │   │   │       │   ├ AppConfig.java
+    │   │   │       │   ├ JwtProvider.java
+    │   │   │       │   └ jwtValidator.java
     │   │   │       ├── controller/
+    │   │   │       │   ├ AuthController.java
     │   │   │       │   ├ HomeController.java
     │   │   │       │   ├ PostController.java
     │   │   │       │   └ UserController.java
@@ -50,8 +55,10 @@ buzz/
     │   │   │       │   ├ PostRepository.java
     │   │   │       │   └ UserRepository.java
     │   │   │       ├── response/
-    │   │   │       │   └ ApiResponse.java
+    │   │   │       │   ├ ApiResponse.java
+    │   │   │       │   └ AuthResponse.java
     │   │   │       └── service/
+    │   │   │           ├ CustomerUserDetailsService.java
     │   │   │           ├ PostService.java
     │   │   │           ├ PostServiceImplementation.java
     │   │   │           ├ UserService.java
