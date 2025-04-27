@@ -29,7 +29,7 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public User findUserById(int userId) throws Exception {
+    public User findUserById(Integer userId) throws Exception {
         Optional<User> user = userRepository.findById(userId);
 
         if(user.isPresent()) {
@@ -46,18 +46,18 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public User followUser(int userId1, int userId2) throws Exception {
+    public User followUser(int reqUserId, int userId2) throws Exception {
 
-        User user1 = findUserById(userId1);
+        User reqUser = findUserById(reqUserId);
         User user2 = findUserById(userId2);
 
-        user2.getFollowers().add(user1.getId());
-        user1.getFollowings().add(user2.getId());
+        user2.getFollowers().add(reqUser.getId());
+        reqUser.getFollowings().add(user2.getId());
 
-        userRepository.save(user1);
+        userRepository.save(reqUser);
         userRepository.save(user2);
 
-        return user1;
+        return reqUser;
     }
 
     @Override
