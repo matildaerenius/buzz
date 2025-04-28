@@ -31,7 +31,7 @@ public class PostController {
         return new ResponseEntity<>(createdPost, HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping("/posts/{postId}")
+    @DeleteMapping("/api/posts/{postId}")
     public ResponseEntity<ApiResponse> deletePost(
             @PathVariable int postId,
             @RequestHeader("Authorization")String token) throws Exception {
@@ -41,25 +41,25 @@ public class PostController {
         return new ResponseEntity<ApiResponse>(res, HttpStatus.OK);
     }
 
-    @GetMapping("/posts/{postId}")
+    @GetMapping("/api/posts/{postId}")
     public ResponseEntity<Post> findPostByIdHandler(@PathVariable int postId) throws Exception {
         Post post = postService.findPostById(postId);
         return new ResponseEntity<>(post, HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/posts/user/{userId}")
+    @GetMapping("/api/posts/user/{userId}")
     public ResponseEntity<List<Post>> findUsersPosts(@PathVariable int userId) throws Exception {
         List<Post> posts = postService.findPostByUserId(userId);
         return new ResponseEntity<List<Post>>(posts, HttpStatus.OK);
     }
 
-    @GetMapping("/posts")
+    @GetMapping("/api/posts")
     public ResponseEntity<List<Post>> findAllPosts() throws Exception {
         List<Post> posts = postService.findAllPosts();
         return new ResponseEntity<List<Post>>(posts, HttpStatus.OK);
     }
 
-    @PutMapping("/posts/save/{postId}")
+    @PutMapping("/api/posts/save/{postId}")
     public ResponseEntity<Post> savePostHandler(
             @PathVariable int postId,
             @RequestHeader("Authorization")String token) throws Exception {
@@ -68,7 +68,7 @@ public class PostController {
         return new ResponseEntity<>(post, HttpStatus.ACCEPTED);
     }
 
-    @PutMapping("/posts/like/{postId}")
+    @PutMapping("/api/posts/like/{postId}")
     public ResponseEntity<Post> likePostHandler(
             @PathVariable int postId,
             @RequestHeader("Authorization")String token) throws Exception {
