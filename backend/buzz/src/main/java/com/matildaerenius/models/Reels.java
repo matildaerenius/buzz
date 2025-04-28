@@ -1,17 +1,13 @@
 package com.matildaerenius.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 @Entity
-@Setter
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Reels {
 
     @Id
