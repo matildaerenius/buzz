@@ -27,7 +27,7 @@ public class StoryController {
         return createdStory;
     }
 
-    @GetMapping("/api/story/{userId}")
+    @GetMapping("/api/story/user/{userId}")
     public List<Story> findUserStory(@PathVariable Integer userId, @RequestHeader("Authorization")String jwt) throws Exception {
 
         User reqUser = userService.findUserByJwt(jwt);
