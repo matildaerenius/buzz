@@ -46,24 +46,37 @@ buzz/
     │   │   │       │   └ jwtValidator.java
     │   │   │       ├── controller/
     │   │   │       │   ├ AuthController.java
+    │   │   │       │   ├ CommentController.java
     │   │   │       │   ├ HomeController.java
     │   │   │       │   ├ PostController.java
+    │   │   │       │   ├ ReelsController.java
     │   │   │       │   └ UserController.java
     │   │   │       ├── models/
+    │   │   │       │   ├ Comment.java
     │   │   │       │   ├ Post.java
+    │   │   │       │   ├ Reels.java
     │   │   │       │   └ User.java
     │   │   │       ├── repository/
+    │   │   │       │   ├ CommentRepository.java
     │   │   │       │   ├ PostRepository.java
+    │   │   │       │   ├ ReelsRepository.java
     │   │   │       │   └ UserRepository.java
+    │   │   │       ├── request/
+    │   │   │       │   └ LoginRequest.java
     │   │   │       ├── response/
     │   │   │       │   ├ ApiResponse.java
     │   │   │       │   └ AuthResponse.java
-    │   │   │       └── service/
-    │   │   │           ├ CustomerUserDetailsService.java
-    │   │   │           ├ PostService.java
-    │   │   │           ├ PostServiceImplementation.java
-    │   │   │           ├ UserService.java
-    │   │   │           └ UserServiceImplementation.java
+    │   │   │       ├── service/
+    │   │   │       │   ├ CommentService.java
+    │   │   │       │   ├ CommentServiceImplementation.java
+    │   │   │       │   ├ CustomerUserDetailsService.java
+    │   │   │       │   ├ PostService.java
+    │   │   │       │   ├ PostServiceImplementation.java
+    │   │   │       │   ├ ReelsService.java
+    │   │   │       │   ├ ReelsServiceImplementation.java
+    │   │   │       │   ├ UserService.java
+    │   │   │       │   └ UserServiceImplementation.java
+    │   │   │       └── BuzzApplication.java
     │   │   └── resources/
             └ application.properties.example
  ```
@@ -83,12 +96,12 @@ buzz/
    cd buzz
    ```
 2. **Start the backend**
-```bash
-  cd backend
-  mvn clean install
-  cp src/main/resources/application.properties.example src/main/resources/application.properties
-  # ← Edit src/main/resources/application.properties with your DB credentials
-  mvn spring-boot:run
+   ```bash
+   cd backend
+   mvn clean install
+   cp src/main/resources/application.properties.example src/main/resources/application.properties
+   # ← Edit src/main/resources/application.properties with your DB credentials
+   mvn spring-boot:run
    ```
 
 ## Configuration
