@@ -23,11 +23,12 @@ A full-featured social media platform where users can create, like, save, repost
 - **Notifications**: Get notified for likes, comments, follows, and messages
   
 ## Tech Stack
-- **Language & Framework**: Java 17, Spring Boot 3  
+- **Language & Framework**: Java 22, Spring Boot 3  
 - **Data**: Spring Data JPA, MySQL 8  
 - **Build**: Maven  
-- **IDE**: IntelliJ IDEA  
-- **Testing**: JUnit, Postman  
+- **IDE**: IntelliJ IDEA
+- **Utilities**: Lombok 
+- **Testing**: Postman  
 - **(Frontend)**: React, Redux (coming)
 
 ## Project Structure
@@ -69,7 +70,8 @@ buzz/
 
 ## Prerequisites
 - Java 17+  
-- Maven 3.6+  
+- Maven 3.6+
+- Lombok
 - MySQL 8 (with database `buzz` created)  
 - (Later) Node.js & npm  
 
