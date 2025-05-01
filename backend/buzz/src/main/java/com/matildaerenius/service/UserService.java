@@ -1,6 +1,6 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.User;
 
 import java.util.List;
 

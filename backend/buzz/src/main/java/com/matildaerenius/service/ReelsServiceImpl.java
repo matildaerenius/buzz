@@ -1,7 +1,7 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.models.Reels;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.Reels;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.repository.ReelsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.matildaerenius.repository;
 
-import com.matildaerenius.models.Story;
+import com.matildaerenius.entity.Story;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

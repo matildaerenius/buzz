@@ -1,4 +1,4 @@
-package com.matildaerenius.models;
+package com.matildaerenius.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,24 +10,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Chat {
+@Data
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private String chat_name;
+    private String content;
 
-    private String chat_image;
+    @ManyToOne
+    private User user;
 
     @ManyToMany
-    private List<User> users = new ArrayList<User>();
+    private List<User> liked = new ArrayList<User>();
 
-    private LocalDateTime timestamp;
+    private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "chat")
-    private List<Message> messages = new ArrayList<>();
 }

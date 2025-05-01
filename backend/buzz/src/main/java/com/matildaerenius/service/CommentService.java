@@ -1,6 +1,6 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.models.Comment;
+import com.matildaerenius.entity.Comment;
 
 public interface CommentService {
 

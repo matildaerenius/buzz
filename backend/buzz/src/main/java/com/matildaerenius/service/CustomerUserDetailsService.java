@@ -1,6 +1,6 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

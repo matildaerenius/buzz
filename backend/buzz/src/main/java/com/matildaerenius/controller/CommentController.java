@@ -1,7 +1,7 @@
 package com.matildaerenius.controller;
 
-import com.matildaerenius.models.Comment;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.Comment;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.service.CommentService;
 import com.matildaerenius.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

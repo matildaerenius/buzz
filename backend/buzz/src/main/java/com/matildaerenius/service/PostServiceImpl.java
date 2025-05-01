@@ -1,7 +1,7 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.models.Post;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.Post;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.repository.PostRepository;
 import com.matildaerenius.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

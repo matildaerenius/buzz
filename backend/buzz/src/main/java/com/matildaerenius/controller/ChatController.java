@@ -1,7 +1,7 @@
 package com.matildaerenius.controller;
 
-import com.matildaerenius.models.Chat;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.Chat;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.dto.request.ChatCreateRequest;
 import com.matildaerenius.service.ChatService;
 import com.matildaerenius.service.UserService;

@@ -1,4 +1,4 @@
-package com.matildaerenius.models;
+package com.matildaerenius.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

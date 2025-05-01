@@ -1,7 +1,7 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.models.Chat;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.Chat;
+import com.matildaerenius.entity.User;
 
 import java.util.List;
 

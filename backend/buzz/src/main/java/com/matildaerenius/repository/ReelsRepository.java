@@ -1,6 +1,6 @@
 package com.matildaerenius.repository;
 
-import com.matildaerenius.models.Reels;
+import com.matildaerenius.entity.Reels;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

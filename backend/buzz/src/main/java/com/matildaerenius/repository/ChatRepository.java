@@ -1,7 +1,7 @@
 package com.matildaerenius.repository;
 
-import com.matildaerenius.models.Chat;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.Chat;
+import com.matildaerenius.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

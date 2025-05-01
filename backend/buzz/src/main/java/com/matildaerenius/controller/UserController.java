@@ -1,14 +1,12 @@
 package com.matildaerenius.controller;
 
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.repository.UserRepository;
 import com.matildaerenius.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class UserController {

@@ -1,7 +1,7 @@
 package com.matildaerenius.controller;
 
-import com.matildaerenius.models.Post;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.Post;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.dto.response.ApiResponse;
 import com.matildaerenius.service.PostService;
 import com.matildaerenius.service.UserService;

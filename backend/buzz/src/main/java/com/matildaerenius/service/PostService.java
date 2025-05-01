@@ -1,6 +1,6 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.models.Post;
+import com.matildaerenius.entity.Post;
 
 import java.util.List;
 

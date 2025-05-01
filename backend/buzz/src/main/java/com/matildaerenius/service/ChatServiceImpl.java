@@ -1,7 +1,7 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.models.Chat;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.Chat;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.repository.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

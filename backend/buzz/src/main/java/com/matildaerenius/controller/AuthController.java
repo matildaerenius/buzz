@@ -1,7 +1,7 @@
 package com.matildaerenius.controller;
 
 import com.matildaerenius.security.JwtTokenProvider;
-import com.matildaerenius.models.User;
+import com.matildaerenius.entity.User;
 import com.matildaerenius.repository.UserRepository;
 import com.matildaerenius.dto.request.LoginRequest;
 import com.matildaerenius.dto.response.AuthResponse;
