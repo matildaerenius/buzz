@@ -3,6 +3,7 @@ package com.matildaerenius.service;
 import com.matildaerenius.entity.Chat;
 import com.matildaerenius.entity.Message;
 import com.matildaerenius.entity.User;
+import com.matildaerenius.repository.ChatRepository;
 import com.matildaerenius.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,9 @@ public class MessageServiceImpl implements MessageService {
     @Autowired
     private ChatService chatService;
 
+    @Autowired
+    private ChatRepository chatRepository;
+
     @Override
     public Message createMessage(User user, Integer chatId, Message req) throws Exception {
 
@@ -31,7 +35,11 @@ public class MessageServiceImpl implements MessageService {
         message.setUser(user);
         message.setTimestamp(LocalDateTime.now());
 
-        return messageRepository.save(message);
+        Message savedMessage = messageRepository.save(message);
+        chat.getMessages().add(savedMessage);
+        chatRepository.save(chat);
+
+        return savedMessage;
     }
 
     @Override
