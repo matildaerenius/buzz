@@ -23,13 +23,21 @@ A full-featured social media platform where users can create, like, save, repost
 - **Notifications**: Get notified for likes, comments, follows, and messages
   
 ## Tech Stack
+### Backend
 - **Language & Framework**: Java 22, Spring Boot 3  
 - **Data**: Spring Data JPA, MySQL 8  
-- **Build**: Maven  
+- **Build Tool**: Maven  
 - **IDE**: IntelliJ IDEA
-- **Utilities**: Lombok 
-- **Testing**: Postman  
-- **(Frontend)**: React, Redux (coming)
+- **Utilities**: Lombok
+- **Security**: Spring Security, JWT  
+- **Testing**: Postman
+
+### Frontend (coming soon)
+- **Library**: React
+- **State Management**: Redux
+- **Styling**: Tailwind CSS, MUI
+- **IDE**: Visual Studio Code
+- **Build Tool**: Webpack 
 
 ## Project Structure
 ```text
@@ -45,40 +53,53 @@ buzz/
     │   │   │       │   ├── JwtTokenProvider.java
     │   │   │       │   └── JwtAuthenticationFilter.java
     │   │   │       ├── controller/
-        │   │       │   ├── AuthController.java
-        │   │       │   ├── ChatController.java
-        │   │       │   ├── CommentController.java
-        │   │       │   ├── HomeController.java
-        │   │       │   ├── MessageController.java
-        │   │       │   ├── PostController.java
-        │   │       │   ├── ReelsController.java
-        │   │       │   ├── StoryController.java
+    │   │   │       │   ├── AuthController.java
+    │   │   │       │   ├── ChatController.java
+    │   │   │       │   ├── CommentController.java
+    │   │   │       │   ├── HomeController.java
+    │   │   │       │   ├── MessageController.java
+    │   │   │       │   ├── PostController.java
+    │   │   │       │   ├── ReelsController.java
+    │   │   │       │   ├── StoryController.java
     │   │   │       │   └── UserController.java
-    │   │   │       ├── models/
-    │   │   │       │   ├ Comment.java
-    │   │   │       │   ├ Post.java
-    │   │   │       │   ├ Reels.java
-    │   │   │       │   └ User.java
+    │   │   │       ├── dto/
+    │   │   │       │    ├── request/
+    │   │   │       │    │   ├── ChatCreateRequest.java
+    │   │   │       │    │   └── LoginRequest.java
+    │   │   │       │    └── response/
+    │   │   │       │        ├── ApiResponse.java
+    │   │   │       │        └── AuthResponse.java
+    │   │   │       ├── entity/                       
+    │   │   │       │   ├── Chat.java
+    │   │   │       │   ├── Comment.java
+    │   │   │       │   ├── Message.java
+    │   │   │       │   ├── Post.java
+    │   │   │       │   ├── Reels.java
+    │   │   │       │   ├── Story.java
+    │   │   │       │   └── User.java
     │   │   │       ├── repository/
-    │   │   │       │   ├ CommentRepository.java
-    │   │   │       │   ├ PostRepository.java
-    │   │   │       │   ├ ReelsRepository.java
-    │   │   │       │   └ UserRepository.java
-    │   │   │       ├── request/
-    │   │   │       │   └ LoginRequest.java
-    │   │   │       ├── response/
-    │   │   │       │   ├ ApiResponse.java
-    │   │   │       │   └ AuthResponse.java
+    │   │   │       │   ├── ChatRepository.java
+    │   │   │       │   ├── CommentRepository.java
+    │   │   │       │   ├── MessageRepository.java
+    │   │   │       │   ├── PostRepository.java
+    │   │   │       │   ├── ReelsRepository.java
+    │   │   │       │   ├── StoryRepository.java
+    │   │   │       │   └── UserRepository.java
     │   │   │       ├── service/
-    │   │   │       │   ├ CommentService.java
-    │   │   │       │   ├ CommentServiceImplementation.java
-    │   │   │       │   ├ CustomerUserDetailsService.java
-    │   │   │       │   ├ PostService.java
-    │   │   │       │   ├ PostServiceImplementation.java
-    │   │   │       │   ├ ReelsService.java
-    │   │   │       │   ├ ReelsServiceImplementation.java
-    │   │   │       │   ├ UserService.java
-    │   │   │       │   └ UserServiceImplementation.java
+    │   │   │       │   ├── ChatService.java
+    │   │   │       │   ├── ChatServiceImpl.java
+    │   │   │       │   ├── CommentService.java
+    │   │   │       │   ├── CommentServiceImpl.java
+    │   │   │       │   ├── MessageService.java
+    │   │   │       │   ├── MessageServiceImpl.java
+    │   │   │       │   ├── PostService.java
+    │   │   │       │   ├── PostServiceImpl.java
+    │   │   │       │   ├── ReelsService.java
+    │   │   │       │   ├── ReelsServiceImpl.java
+    │   │   │       │   ├── StoryService.java
+    │   │   │       │   ├── StoryServiceImpl.java
+    │   │   │       │   ├── UserService.java
+    │   │   │       │   └── UserServiceImpl.java
     │   │   │       └── BuzzApplication.java
     │   │   └── resources/
             └ application.properties.example
