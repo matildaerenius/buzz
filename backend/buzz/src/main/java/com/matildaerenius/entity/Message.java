@@ -1,6 +1,7 @@
 package com.matildaerenius.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,7 @@ public class Message {
     @ManyToOne
     private User user;
 
-//    @JsonIgnore
+    @JsonIgnore
     @ManyToOne
     private Chat chat;
 
