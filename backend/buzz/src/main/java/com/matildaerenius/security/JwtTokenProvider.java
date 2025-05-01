@@ -1,4 +1,4 @@
-package com.matildaerenius.config;
+package com.matildaerenius.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 @Component
-public class JwtProvider {
+public class JwtTokenProvider {
 
     @Value("${jwt.secret}")
     private String secretString;

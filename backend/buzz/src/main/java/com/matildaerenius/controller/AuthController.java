@@ -1,10 +1,10 @@
 package com.matildaerenius.controller;
 
-import com.matildaerenius.config.JwtProvider;
+import com.matildaerenius.security.JwtTokenProvider;
 import com.matildaerenius.models.User;
 import com.matildaerenius.repository.UserRepository;
-import com.matildaerenius.request.LoginRequest;
-import com.matildaerenius.response.AuthResponse;
+import com.matildaerenius.dto.request.LoginRequest;
+import com.matildaerenius.dto.response.AuthResponse;
 import com.matildaerenius.service.CustomerUserDetailsService;
 import com.matildaerenius.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +52,7 @@ public class AuthController {
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(savedUser.getEmail(), savedUser.getPassword());
 
-        String token = JwtProvider.generateToken(authentication);
+        String token = JwtTokenProvider.generateToken(authentication);
 
         AuthResponse response = new AuthResponse(token, "Register Success!");
 
@@ -64,7 +64,7 @@ public class AuthController {
 
         Authentication authentication = authenticate(loginRequest.getEmail(), loginRequest.getPassword());
 
-        String token = JwtProvider.generateToken(authentication);
+        String token = JwtTokenProvider.generateToken(authentication);
 
         AuthResponse response = new AuthResponse(token, "Login Success!");
 

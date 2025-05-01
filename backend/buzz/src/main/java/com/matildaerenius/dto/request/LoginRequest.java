@@ -1,4 +1,4 @@
-package com.matildaerenius.request;
+package com.matildaerenius.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateChatRequest {
+public class LoginRequest {
 
-    private Integer userId;
-
+    private String email;
+    private String password;
 }

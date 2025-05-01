@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ReelsServiceImplementation implements ReelsService {
+public class ReelsServiceImpl implements ReelsService {
 
     @Autowired
     private ReelsRepository reelsRepository;

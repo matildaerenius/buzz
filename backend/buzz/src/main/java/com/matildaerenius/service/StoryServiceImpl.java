@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class StoryServiceImplementation implements StoryService {
+public class StoryServiceImpl implements StoryService {
 
     @Autowired
     private StoryRepository storyRepository;

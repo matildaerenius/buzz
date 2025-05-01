@@ -1,6 +1,6 @@
 package com.matildaerenius.service;
 
-import com.matildaerenius.config.JwtProvider;
+import com.matildaerenius.security.JwtTokenProvider;
 import com.matildaerenius.models.User;
 import com.matildaerenius.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserServiceImplementation implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository;
@@ -97,7 +97,7 @@ public class UserServiceImplementation implements UserService {
     @Override
     public User findUserByJwt(String jwt) throws Exception {
 
-        String email = JwtProvider.getEmailFromJwtToken(jwt);
+        String email = JwtTokenProvider.getEmailFromJwtToken(jwt);
         User user = userRepository.findByEmail(email);
         return user;
     }

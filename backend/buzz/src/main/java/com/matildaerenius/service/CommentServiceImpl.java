@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
-public class CommentServiceImplementation implements CommentService {
+public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private PostService postService;

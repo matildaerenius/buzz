@@ -1,4 +1,4 @@
-package com.matildaerenius.response;
+package com.matildaerenius.dto.response;
 
 
 import lombok.AllArgsConstructor;

@@ -1,4 +1,5 @@
-package com.matildaerenius.request;
+package com.matildaerenius.dto.response;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginRequest {
+public class AuthResponse {
 
-    private String email;
-    private String password;
+    private String token;
+    private String message;
+
 }
