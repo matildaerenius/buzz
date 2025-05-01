@@ -40,17 +40,20 @@ buzz/
     │   ├── main/
     │   │   ├── java/
     │   │   │   └── com/matildaerenius/
-    │   │   │       ├── config/
-    │   │   │       │   ├ AppConfig.java
-    │   │   │       │   ├ JwtProvider.java
-    │   │   │       │   └ jwtValidator.java
+    │   │   │       ├── security/                  
+    │   │   │       │   ├── SecurityConfig.java     
+    │   │   │       │   ├── JwtTokenProvider.java
+    │   │   │       │   └── JwtAuthenticationFilter.java
     │   │   │       ├── controller/
-    │   │   │       │   ├ AuthController.java
-    │   │   │       │   ├ CommentController.java
-    │   │   │       │   ├ HomeController.java
-    │   │   │       │   ├ PostController.java
-    │   │   │       │   ├ ReelsController.java
-    │   │   │       │   └ UserController.java
+        │   │       │   ├── AuthController.java
+        │   │       │   ├── ChatController.java
+        │   │       │   ├── CommentController.java
+        │   │       │   ├── HomeController.java
+        │   │       │   ├── MessageController.java
+        │   │       │   ├── PostController.java
+        │   │       │   ├── ReelsController.java
+        │   │       │   ├── StoryController.java
+    │   │   │       │   └── UserController.java
     │   │   │       ├── models/
     │   │   │       │   ├ Comment.java
     │   │   │       │   ├ Post.java
