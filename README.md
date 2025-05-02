@@ -77,6 +77,10 @@ buzz/
     │   │   │       │   ├── Reels.java
     │   │   │       │   ├── Story.java
     │   │   │       │   └── User.java
+    │   │   │       ├── exception/                  
+    │   │   │       │   ├── ErrorDetails.java     
+    │   │   │       │   ├── GlobalException.java
+    │   │   │       │   └── UserException.java
     │   │   │       ├── repository/
     │   │   │       │   ├── ChatRepository.java
     │   │   │       │   ├── CommentRepository.java
