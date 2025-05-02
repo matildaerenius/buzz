@@ -1,0 +1,872 @@
+{
+	"info": {
+		"_postman_id": "110aa384-d250-478f-9dae-4080d31aad60",
+		"name": "Buzz",
+		"description": "A social media website.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44102047",
+		"_collection_link": "https://matildaerenius-3918647.postman.co/workspace/Matilda-Erenius's-Workspace~f004c261-a296-4768-887a-13032d735d3d/collection/44102047-110aa384-d250-478f-9dae-4080d31aad60?action=share&source=collection_link&creator=44102047"
+	},
+	"item": [
+		{
+			"name": "get user by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NjE4MTI1MSwiZXhwIjoxNzQ2MjY3NjUxLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.pi956gJuN8veVjqOydO9pH31MlsvkkSCK3ooMWonMadD1UzwHRGHCWgCgW3Fk-Mt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ncjdkabfiuywebfuhcjaksbckaiwhdnjchbvfuygerowjialcnadjkvbysgb",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"firstName\": \"Test\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NjA5ODA5OCwiZXhwIjoxNzQ2MTg0NDk4LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.Ynf7tZEVwWvUj1NwOyCk353a0LRprNQTD3IY-lAlfXGpzLPrSmLOzf8x6rz_FFDt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "follow-unfollow user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/follow/1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"follow",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/search?query=Doe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Doe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTc4Mjk3MywiZXhwIjoxNzQ1ODY5MzczLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.ILugCS_2TBjVYOagJ2CDM-X9DIyVeZVQ8S90AQ_eVTJ0O0LbfalMdspPjXy77pWO",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"https://cdn.pixabay.com/photo/2024/12/19/17/48/mountain-9278324_640.jpg\",\r\n    \"caption\": \"mate, nice image bro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTgyOTQ0OSwiZXhwIjoxNzQ1OTE1ODQ5LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.jNoSN1VJIcvKXsBWztzSTYeQk4i2zXUZSzgbVpKZ_y1Px7xpk-1CyAeVnxq96-9T",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTc4Mjk3MywiZXhwIjoxNzQ1ODY5MzczLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.ILugCS_2TBjVYOagJ2CDM-X9DIyVeZVQ8S90AQ_eVTJ0O0LbfalMdspPjXy77pWO",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/like/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"like",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get post by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find users post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saved post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/save/1/user/2\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"save",
+						"1",
+						"user",
+						"2\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/1/user/1\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"1",
+						"user",
+						"1\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user from token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NjA5ODA5OCwiZXhwIjoxNzQ2MTg0NDk4LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.Ynf7tZEVwWvUj1NwOyCk353a0LRprNQTD3IY-lAlfXGpzLPrSmLOzf8x6rz_FFDt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTgyOTQ0OSwiZXhwIjoxNzQ1OTE1ODQ5LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.jNoSN1VJIcvKXsBWztzSTYeQk4i2zXUZSzgbVpKZ_y1Px7xpk-1CyAeVnxq96-9T",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"i like this image\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/comments/post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comments",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTgzMDEyMiwiZXhwIjoxNzQ1OTE2NTIyLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.I7UZQX3dunkFtd3sKfFbqiplD2BBsC7Z4ahTRG19efH-qKTMfUgbjDZeHlJNFfmh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/comments/like/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comments",
+						"like",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create reel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTg1NjY5NywiZXhwIjoxNzQ1OTQzMDk3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.PoxhunpH4hTWloXzXeU3AcCLze_n4hKK-tmUJDUrl-RDziqzDRgYHEsppvffxM8u",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"first reel\",\r\n    \"video\": \"https://videos.pexels.com/video-files/4008665/4008665-sd_640_360_25fps.mp4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/reels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all reels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTg1NjY5NywiZXhwIjoxNzQ1OTQzMDk3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.PoxhunpH4hTWloXzXeU3AcCLze_n4hKK-tmUJDUrl-RDziqzDRgYHEsppvffxM8u",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/reels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find users feels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTg1NjY5NywiZXhwIjoxNzQ1OTQzMDk3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.PoxhunpH4hTWloXzXeU3AcCLze_n4hKK-tmUJDUrl-RDziqzDRgYHEsppvffxM8u",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/reels/user/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reels",
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create story",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTk0MDAwMSwiZXhwIjoxNzQ2MDI2NDAxLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.R6JdRizCHR12Bt_SvIzCUrvjBJzzPxp1WhMe09Q0Y2N6I3Zdm1aikGB4UueTPTtE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\":\"https://images.pexels.com/photos/31005845/pexels-photo-31005845/free-photo-of-fridfull-utsikt-over-sjon-bled-och-kyrkan-pa-on.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load\",\r\n    \"caption\":\"pretty cool hey\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/story",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"story"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find user story",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NTk0MDMzMywiZXhwIjoxNzQ2MDI2NzMzLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.vgc57BSXn3GTxeBQ7j0mq7Sad6MyX-X7W1e59zucfNA5nXOzjcOOXoTr1fmnLVYs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/story/user/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"story",
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create chat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NjA5OTI4OSwiZXhwIjoxNzQ2MTg1Njg5LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.ssG0yunWcUMS_4fa70H3db_rtWqi3meV1YhYqXttg9U7M_RDJ1OQqCryEDlF-unA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/chats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find users chat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NjA5ODA5OCwiZXhwIjoxNzQ2MTg0NDk4LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.Ynf7tZEVwWvUj1NwOyCk353a0LRprNQTD3IY-lAlfXGpzLPrSmLOzf8x6rz_FFDt",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/chats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"chats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NjEwNDA2OSwiZXhwIjoxNzQ2MTkwNDY5LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.AUSqYuB1u8ky14DUWpcdbSe7qsi7reOAstpLq61-CJT-BuM9T8YCOh7rFHI63Wyl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"whasssup\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/messages/chat/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"messages",
+						"chat",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get messages from chat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJtYXRpbGRhZXJlbml1cyIsImlhdCI6MTc0NjEwNDA2OSwiZXhwIjoxNzQ2MTkwNDY5LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.AUSqYuB1u8ky14DUWpcdbSe7qsi7reOAstpLq61-CJT-BuM9T8YCOh7rFHI63Wyl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/messages/chat/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"messages",
+						"chat",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
