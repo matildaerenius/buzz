@@ -144,24 +144,32 @@ cp backend/src/main/resources/application.properties.example \
 
 | Method   | Path                        | Description                  |
 | ------   | ----------------------------| ---------------------------- |
-| `GET`    | `/users`                    | List all users               |
-| `POST`   | `/users`                    | Register new user            |
+| `GET`    | `/api/users`                | List all users               |
+| `POST`   | `/auth/signup`              | Register new user            |
 | `PUT`    | `/users/{id}`               | Update a user                |
 | `DELETE` | `/users/{id}`               | Delete a user                |
-| `GET`    | `/posts`                    | List all posts               |
-| `POST`   | `/posts/user/{userId}`      | Create a new post for a user |
-| `PUT`    | `/posts/{id}/user/{uid}`    | Toggle save/like post        |
-| `DELETE` | `/posts/{id}/user/{uid}`    | Delete a post                |
-| `GET`    | `/chats`                    | List all chats               |
-| `POST`   | `/chats`                    | Create a new chat            |
-| `GET`    | `/chats/{chatId}`           | Get messages from a chat     |
+| `GET`    | `/api/posts`                | List all posts               |
+| `POST`   | `/api/posts/user/{userId}`  | Create a new post for a user |
+| `PUT`    | `/api/posts/{id}/user/{uid}`| Toggle save/like post        |
+| `DELETE` | `/api/posts/{id}/user/{uid}`| Delete a post                |
+| `GET`    | `/api/chats`                | List all chats               |
+| `POST`   | `/api/chats`                | Create a new chat            |
+| `GET`    | `/api/chats/{chatId}`       | Get messages from a chat     |
 | …        | …                           | …                            |
 
 ## Importing Postman Collection
-1. Download Postman-collection (raw JSON):
-   ```txt
-   [https://github.com/matildaerenius/Buzz/blob/main/docs/postman-collection.json](https://github.com/matildaerenius/buzz/blob/main/docs/Buzz.postman_collection.json)
+1. **Run in Postman**
+- Click on the button “Run in Postman”:  
+   [![Run in Postman](https://run.pstmn.io/button.svg)](https://raw.githubusercontent.com/matildaerenius/Buzz/main/docs/postman-collection.json)
 
+2. **Or import manually**
+   - Open Postman → **Import** → **Link**.
+   - Copy & paste this link:
+     ```
+     https://raw.githubusercontent.com/matildaerenius/buzz/refs/heads/main/docs/Buzz.postman_collection.json
+     ```
+   - Click **Continue** → **Import**
+     
 ## Testing
 
 ## Future Development
