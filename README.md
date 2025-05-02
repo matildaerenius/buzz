@@ -142,18 +142,25 @@ cp backend/src/main/resources/application.properties.example \
 ```
 ## API Reference
 
-| Method | Path                    | Description            |
-| ------ | ----------------------- | ---------------------- |
-| GET    | `/users`                | List all users         |
-| POST   | `/users`                | Register new user      |
-| PUT    | `/users/{id}`           | Update user            |
-| DELETE | `/users/{id}`           | Delete user            |
-| GET    | `/posts`                | List all posts         |
-| POST   | `/posts/user/{userId}`  | Create a new post      |
-| PUT    | `/posts/{id}/user/{uid}`| Toggle save/like post  |
-| DELETE | `/posts/{id}/user/{uid}`| Delete a post          |
+| Method   | Path                        | Description                  |
+| ------   | ----------------------------| ---------------------------- |
+| `GET`    | `/users`                    | List all users               |
+| `POST`   | `/users`                    | Register new user            |
+| `PUT`    | `/users/{id}`               | Update a user                |
+| `DELETE` | `/users/{id}`               | Delete a user                |
+| `GET`    | `/posts`                    | List all posts               |
+| `POST`   | `/posts/user/{userId}`      | Create a new post for a user |
+| `PUT`    | `/posts/{id}/user/{uid}`    | Toggle save/like post        |
+| `DELETE` | `/posts/{id}/user/{uid}`    | Delete a post                |
+| `GET`    | `/chats`                    | List all chats               |
+| `POST`   | `/chats`                    | Create a new chat            |
+| `GET`    | `/chats/{chatId}`           | Get messages from a chat     |
+| …        | …                           | …                            |
 
-For full examples and payload definitions, see [docs/API.md](docs/API.md) or import `docs/postman-collection.json`.
+## Importing Postman Collection
+1. Download Postman-collection (raw JSON):
+   ```txt
+   https://github.com/matildaerenius/Buzz/blob/main/docs/postman-collection.json
 
 ## Testing
 
