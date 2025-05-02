@@ -23,21 +23,25 @@ A full-featured social media platform where users can create, like, save, repost
 - **Notifications**: Get notified for likes, comments, follows, and messages
   
 ## Tech Stack
+
 ### Backend
 - **Language & Framework**: Java 22, Spring Boot 3  
 - **Data**: Spring Data JPA, MySQL 8  
 - **Build Tool**: Maven  
-- **IDE**: IntelliJ IDEA
 - **Utilities**: Lombok
 - **Security**: Spring Security, JWT  
 - **Testing**: Postman
+- **IDE**: IntelliJ IDEA
 
-### Frontend (coming soon)
-- **Library**: React
+### Frontend (in progress)
+- **Framework**: React 18
 - **State Management**: Redux
-- **Styling**: Tailwind CSS, MUI
+- **Form Handling & Validation**: Formik, Yup
+- **Component Library**: MUI 
+- **Styling**: Tailwind CSS
+- **Package Manager**: npm
+- **Bundler**: Webpack
 - **IDE**: Visual Studio Code
-- **Build Tool**: Webpack 
 
 ## Project Structure
 ```text
@@ -110,11 +114,16 @@ buzz/
  ```
 
 ## Prerequisites
+
+### Backend
 - Java 17+  
 - Maven 3.6+
 - Lombok
-- MySQL 8 (with database `buzz` created)  
-- (Later) Node.js & npm  
+- MySQL 8 (with database `buzz` created)
+
+### Frontend
+- Node.js >= 16
+- npm >= 8
 
 ## Installation & Running
 
@@ -131,6 +140,9 @@ buzz/
    # ← Edit src/main/resources/application.properties with your DB credentials
    mvn spring-boot:run
    ```
+3. Change into the frontend directory:
+   ```bash
+   cd frontend
 
 ## Configuration
 
@@ -159,7 +171,7 @@ cp backend/src/main/resources/application.properties.example \
 
 ## Importing Postman Collection
 1. **Run in Postman**
-- Click on the button “Run in Postman”:  
+    - Click on the button “Run in Postman”:  
    [![Run in Postman](https://run.pstmn.io/button.svg)](https://raw.githubusercontent.com/matildaerenius/Buzz/main/docs/postman-collection.json)
 
 2. **Or import manually**
