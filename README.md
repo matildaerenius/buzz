@@ -160,7 +160,7 @@ cp backend/src/main/resources/application.properties.example \
 ## Importing Postman Collection
 1. Download Postman-collection (raw JSON):
    ```txt
-   https://github.com/matildaerenius/Buzz/blob/main/docs/postman-collection.json
+   [https://github.com/matildaerenius/Buzz/blob/main/docs/postman-collection.json](https://github.com/matildaerenius/buzz/blob/main/docs/Buzz.postman_collection.json)
 
 ## Testing
 
