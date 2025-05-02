@@ -1,6 +1,7 @@
 package com.matildaerenius.controller;
 
 import com.matildaerenius.entity.User;
+import com.matildaerenius.exception.UserException;
 import com.matildaerenius.repository.UserRepository;
 import com.matildaerenius.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class UserController {
     }
 
     @GetMapping("/api/users/{userId}")
-    public User getUserById(@PathVariable("userId") int id) throws Exception {
+    public User getUserById(@PathVariable("userId") int id) throws UserException {
 
         User user = userService.findUserById(id);
         return user;
@@ -35,14 +36,14 @@ public class UserController {
     }
 
     @PutMapping("/api/users/")
-    public User updateUser(@RequestHeader("Authorization")String token, @RequestBody User user) throws Exception {
+    public User updateUser(@RequestHeader("Authorization")String token, @RequestBody User user) throws UserException {
         User reqUser = userService.findUserByJwt(token);
         User updatedUser = userService.updateUser(user, reqUser.getId());
         return updatedUser;
     }
 
     @PutMapping("/api/users/follow/{userId2}")
-    public User followUserHandler(@RequestHeader("Authorization")String token, @PathVariable int userId2) throws Exception {
+    public User followUserHandler(@RequestHeader("Authorization")String token, @PathVariable int userId2) throws UserException {
         User reqUser = userService.findUserByJwt(token);
         User user = userService.followUser(reqUser.getId(), userId2);
         return user;
@@ -55,7 +56,7 @@ public class UserController {
     }
 
     @GetMapping("/api/users/profile")
-    public User getUserFromToken(@RequestHeader("Authorization")String token) throws Exception {
+    public User getUserFromToken(@RequestHeader("Authorization")String token) {
 
        User user = userService.findUserByJwt(token);
        user.setPassword(null);
