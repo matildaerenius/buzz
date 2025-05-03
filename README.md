@@ -40,6 +40,7 @@ A full-featured social media platform where users can create, like, save, repost
 - **Component Library**: MUI 
 - **Styling**: Tailwind CSS
 - **Package Manager**: npm
+- **HTTP Client**: Axios
 - **Bundler**: Webpack
 - **IDE**: Visual Studio Code
 
