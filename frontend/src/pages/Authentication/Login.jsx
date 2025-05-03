@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import * as Yup from "yup"
 import { loginUserAction } from '../../Redux/Auth/auth.action';
+import { useNavigate } from 'react-router-dom'
 
 
 const initialValues = { email: "", password: "" };
@@ -14,6 +15,7 @@ const validationSchema = {
 const Login = () => {
     const [formValue, setFormValue] = useState();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleSubmit = (values) => {
         console.log("handle submit", values);
@@ -30,7 +32,7 @@ const Login = () => {
                         <div>
                             <Field as={TextField}
                                 name="email"
-                                placeholder="email"
+                                placeholder="Email"
                                 type="email"
                                 variant="outlined" fullWidth />
                             <ErrorMessage name="email" component={"div"} classname="text-red-500" />
@@ -38,7 +40,7 @@ const Login = () => {
                         <div>
                             <Field as={TextField}
                                 name="password"
-                                placeholder="password"
+                                placeholder="Password"
                                 type="password"
                                 variant="outlined" fullWidth />
                             <ErrorMessage name="password" component="div" classname="text-red-500" />
@@ -47,8 +49,12 @@ const Login = () => {
                     <Button sx={{ padding: ".8rem 0rem" }} fullWidth type="submit" variant="contained" color="primary">Login</Button>
                 </Form>
             </Formik>
+            <div className="flex gap-2 items-center justify-center pt-5">
+                <p>Don't have an account?</p>
+                <Button onClick={()=>navigate("/register")}>Register</Button>
+            </div>
         </>
-    )
-}
+    );
+};
 
 export default Login

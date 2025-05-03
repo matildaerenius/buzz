@@ -1,37 +1,47 @@
-import { Card, Grid } from '@mui/material'
+import { Box, Card, Grid } from '@mui/material'
 import React from 'react'
 import Login from './Login'
 import Register from './Register'
+import { Route, Routes } from 'react-router-dom'
 
-const Authentication = () => {
-    return (
-        <div>
-            <Grid container>
-                <Grid className='h-screen overflow-hidden' item xs={7}>
-                    <img className='h-full w-full' src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                </Grid>
-                <Grid item xs={5}>
+const bgUrl =  
+  'https://images.pexels.com/photos/1111367/pexels-photo-1111367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 
-                <div className='px-20 flex flex-col justify-center h-full'>
+export const Authentication = () => (
+  <Box
+    sx={{
+      position: 'relative',
+      height: '100vh',
+      width: '100%',
+      backgroundImage: `url(${bgUrl})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+  >
+    <Box
+      sx={{
+        position: 'absolute',
+        top: '50%',
+        right: { xs: '5%', sm: '10%', md: '15%' },
+        transform: 'translateY(-50%)',
+        width: { xs: '90%', sm: 360 },
+      }}
+    >
+      <Card sx={{ p: 4 }}>
+        <Box textAlign="center" mb={2}>
+          <h1 className="logo">Buzz</h1>
+          <p>Join the Buzz — Connect, Share, Enjoy</p>
+        </Box>
 
-                    <Card className='card p-8'>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </Card>
+    </Box>
+  </Box>
+)
 
-                        <div className='flex flex-col items-center mb-5 space-y-1'>
-                        <h1 className='logo text-center'>Buzz</h1>
-                        <p className='text-center text-sm w-[70&]'>Share stories: Your Social World, Your way</p>
-                        </div>
-
-                        <Login/> 
-                       {/*<Register/>*/}
-
-                    </Card>
-
-                </div>
-
-                </Grid>
-            </Grid>
-        </div>
-    )
-}
 
 export default Authentication

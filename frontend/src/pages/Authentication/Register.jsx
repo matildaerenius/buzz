@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import * as Yup from "yup"
 import { registerUserAction } from '../../Redux/Auth/auth.action';
+import { useNavigate } from 'react-router-dom'
 
 
 const initialValues = { firstName: "", lastName:"", email: "", password: "", gender: "" };
@@ -14,6 +15,7 @@ const validationSchema = {
 const Register = () => {
     const [gender, setGender] = useState("");
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleSubmit = (values) => {
         values.gender=gender;
@@ -81,6 +83,10 @@ const Register = () => {
                     <Button sx={{ padding: ".8rem 0rem" }} fullWidth type="submit" variant="contained" color="primary">Register</Button>
                 </Form>
             </Formik>
+             <div className="flex gap-2 items-center justify-center pt-5">
+                            <p>Already have an account ?</p>
+                            <Button onClick={()=>navigate("/login")}>Login</Button>
+                        </div>
         </>
     )
 }
