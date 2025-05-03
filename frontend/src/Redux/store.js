@@ -6,6 +6,6 @@ import { authReducer } from "./Auth/auth.reducer";
 const rootReducers=combineReducers({
     auth:authReducer
 
-})
+});
 
-const store=legacy_createStore(rootReducers, applyMiddleware(thunk))
+export const store=legacy_createStore(rootReducers, applyMiddleware(thunk));

@@ -31,7 +31,8 @@ export const registerUserAction = (loginData) => async (dispatch) => {
 
         }
 
-        console.log("register", data)
+        console.log("register------", data)
+
         dispatch({ type: LOGIN_SUCCESS, payload: data.jwt })
 
     } catch (error) {
