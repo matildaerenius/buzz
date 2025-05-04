@@ -14,7 +14,7 @@ const MiddlePart = () => {
     console.log("open post model...");
   };
   return (
-    <div className="px-20">
+    <div>
       <section className="flex items-center p-5 rounded-b-md">
         <div className="flex flex-col items-center mr-4 cursor-pointer">
           <Avatar

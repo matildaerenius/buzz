@@ -14,16 +14,17 @@ export const HomePage = () => {
   return (
     <div className="px-20">
       <Grid container spacing={0}>
-        <Grid item xs={0} lg={3}>
+        <Grid item xs={0} md={3} lg={3}>
           <div className="sticky top-0">
             <Sidebar />
           </div>
         </Grid>
         <Grid
-          lg={location.pathname === "/" ? 6 : 9}
           item
-          className="px-5 flex justify-center"
           xs={12}
+          md={location.pathname === "/" ? 6 : 9}
+          lg={location.pathname === "/" ? 6 : 9}
+          className="px-5 flex justify-center"
         >
           <Routes>
             <Route path="/" element={<MiddlePart />} />
@@ -32,7 +33,7 @@ export const HomePage = () => {
             <Route path="/profile/:id" element={<Profile />} />
           </Routes>
         </Grid>
-        <Grid item lg={3} className="relative">
+        <Grid item xs={0} md={3} lg={3}>
           <div className="sticky top-0 w-full">
             <HomeRight />
           </div>
