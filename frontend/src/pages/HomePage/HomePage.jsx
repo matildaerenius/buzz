@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MiddlePart from "../../components/MiddlePart/MiddlePart";
 import CreateReelsForm from "../../components/Reels/CreateReelsForm";
 import Reels from "../../components/Reels/Reels";
@@ -10,21 +10,30 @@ import HomeRight from "../../components/HomeRight/HomeRight";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
 export const HomePage = () => {
-  const location = useLocation();
+  // const location = useLocation();
   return (
-    <div className="px-20">
-      <Grid container spacing={0}>
-        <Grid item xs={0} md={3} lg={3}>
-          <div className="sticky top-0">
+    <div className="px-20 h-screen">
+      <Grid container wrap="nowrap" spacing={0} sx={{ height: "100%" }}>
+        <Grid
+          item
+          xs={false}
+          md={3}
+          sx={{ display: { xs: "none", md: "block" } }}
+        >
+          <div className="sticky top-0 h-screen">
             <Sidebar />
           </div>
         </Grid>
         <Grid
           item
           xs={12}
-          md={location.pathname === "/" ? 6 : 9}
-          lg={location.pathname === "/" ? 6 : 9}
-          className="px-5 flex justify-center"
+          md={6}
+          sx={{
+            minWidth: 0,
+            overflowY: "auto",
+            height: "100%",
+            px: 2,
+          }}
         >
           <Routes>
             <Route path="/" element={<MiddlePart />} />
@@ -33,8 +42,13 @@ export const HomePage = () => {
             <Route path="/profile/:id" element={<Profile />} />
           </Routes>
         </Grid>
-        <Grid item xs={0} md={3} lg={3}>
-          <div className="sticky top-0 w-full">
+        <Grid
+          item
+          xs={false}
+          md={3}
+          sx={{ display: { xs: "none", md: "block" } }}
+        >
+          <div className="sticky top-0 h-screen">
             <HomeRight />
           </div>
         </Grid>
