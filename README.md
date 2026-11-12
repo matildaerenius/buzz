@@ -1,200 +1,126 @@
-# Buzz
-A full-featured social media platform where users can create, like, save, repost and comment on posts, enjoy real-time messaging and video/voice calls, share short-form “reels,” and customize their profile with follow/unfollow functionality.
+<div align="center">
 
-## Table of Contents
-1. [Features](#features)
-2. [Tech Stack](#tech-stack)
-3. [Project Structure](#project-structure)
-4. [Prerequisites](#prerequisites)
-5. [Installation & Running](#installation--running)
-6. [Configuration](#configuration)
-7. [API Reference](#api-reference)
-8. [Testing](#testing)
-9. [Future Development](#future-development)
-10. [Contributing](#contributing)
-11. [License](#license)
-12. [Contact](#contact)
-    
-## Features
-- **Posts**: Create, like, save, repost & comment  
-- **Real-Time Communication**: One-to-one and group messaging; video & voice calls  
-- **Reels**: Record, upload and browse short-form videos  
-- **User Profiles**: Update profile details; follow/unfollow other users  
-- **Notifications**: Get notified for likes, comments, follows, and messages
-  
-## Tech Stack
+# 🐝 Buzz
 
-### Backend
-- **Language & Framework**: Java 22, Spring Boot 3  
-- **Data**: Spring Data JPA, MySQL 8  
-- **Build Tool**: Maven  
-- **Utilities**: Lombok
-- **Security**: Spring Security, JWT  
-- **Testing**: Postman
-- **IDE**: IntelliJ IDEA
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+</p>
 
-### Frontend (in progress)
-- **Framework**: React 18
-- **State Management**: Redux
-- **Form Handling & Validation**: Formik, Yup
-- **Component Library**: MUI 
-- **Styling**: Tailwind CSS
-- **Package Manager**: npm
-- **HTTP Client**: Axios
-- **Bundler**: Webpack
-- **IDE**: Visual Studio Code
+> **A full-featured social media platform for real-time connection and content sharing** 📱
 
-## Project Structure
-```text
-buzz/
-└── backend/
-    ├── pom.xml
-    ├── src/
-    │   ├── main/
-    │   │   ├── java/
-    │   │   │   └── com/matildaerenius/
-    │   │   │       ├── security/                  
-    │   │   │       │   ├── SecurityConfig.java     
-    │   │   │       │   ├── JwtTokenProvider.java
-    │   │   │       │   └── JwtAuthenticationFilter.java
-    │   │   │       ├── controller/
-    │   │   │       │   ├── AuthController.java
-    │   │   │       │   ├── ChatController.java
-    │   │   │       │   ├── CommentController.java
-    │   │   │       │   ├── HomeController.java
-    │   │   │       │   ├── MessageController.java
-    │   │   │       │   ├── PostController.java
-    │   │   │       │   ├── ReelsController.java
-    │   │   │       │   ├── StoryController.java
-    │   │   │       │   └── UserController.java
-    │   │   │       ├── dto/
-    │   │   │       │    ├── request/
-    │   │   │       │    │   ├── ChatCreateRequest.java
-    │   │   │       │    │   └── LoginRequest.java
-    │   │   │       │    └── response/
-    │   │   │       │        ├── ApiResponse.java
-    │   │   │       │        └── AuthResponse.java
-    │   │   │       ├── entity/                       
-    │   │   │       │   ├── Chat.java
-    │   │   │       │   ├── Comment.java
-    │   │   │       │   ├── Message.java
-    │   │   │       │   ├── Post.java
-    │   │   │       │   ├── Reels.java
-    │   │   │       │   ├── Story.java
-    │   │   │       │   └── User.java
-    │   │   │       ├── exception/                  
-    │   │   │       │   ├── ErrorDetails.java     
-    │   │   │       │   ├── GlobalException.java
-    │   │   │       │   └── UserException.java
-    │   │   │       ├── repository/
-    │   │   │       │   ├── ChatRepository.java
-    │   │   │       │   ├── CommentRepository.java
-    │   │   │       │   ├── MessageRepository.java
-    │   │   │       │   ├── PostRepository.java
-    │   │   │       │   ├── ReelsRepository.java
-    │   │   │       │   ├── StoryRepository.java
-    │   │   │       │   └── UserRepository.java
-    │   │   │       ├── service/
-    │   │   │       │   ├── ChatService.java
-    │   │   │       │   ├── ChatServiceImpl.java
-    │   │   │       │   ├── CommentService.java
-    │   │   │       │   ├── CommentServiceImpl.java
-    │   │   │       │   ├── MessageService.java
-    │   │   │       │   ├── MessageServiceImpl.java
-    │   │   │       │   ├── PostService.java
-    │   │   │       │   ├── PostServiceImpl.java
-    │   │   │       │   ├── ReelsService.java
-    │   │   │       │   ├── ReelsServiceImpl.java
-    │   │   │       │   ├── StoryService.java
-    │   │   │       │   ├── StoryServiceImpl.java
-    │   │   │       │   ├── UserService.java
-    │   │   │       │   └── UserServiceImpl.java
-    │   │   │       └── BuzzApplication.java
-    │   │   └── resources/
-            └ application.properties.example
- ```
+</div>
 
-## Prerequisites
+<br>
 
-### Backend
-- Java 17+  
+**Buzz** is a comprehensive social media platform that allows users to create, like, save, repost, and comment on posts. The application supports rich interactions including real-time messaging, video and voice calls, and the ability to share short-form "reels". 
+
+Users can customize their profiles, follow or unfollow others, and stay updated with real-time notifications for likes, comments, follows, and messages. 
+
+---
+
+## ✨ Features
+
+- 📝 **Posts:** Create, like, save, repost, and comment on user-generated content.
+- 💬 **Real-Time Communication:** Enjoy one-to-one and group messaging, as well as video and voice calls.
+- 🎬 **Reels:** Record, upload, and browse short-form videos.
+- 👤 **User Profiles:** Update personal profile details and manage follow/unfollow functionality.
+- 🔔 **Notifications:** Get instantly notified for likes, comments, follows, and messages.
+
+---
+
+## 🛠 Tech Stack
+
+**Backend**
+- **Language & Framework:** Java 22, Spring Boot 3
+- **Data:** Spring Data JPA, MySQL 8
+- **Build Tool:** Maven
+- **Security:** Spring Security, JWT
+- **Utilities:** Lombok
+- **Testing:** Postman
+- **IDE:** IntelliJ IDEA
+
+**Frontend (in progress)**
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+**Backend**
+- Java 17+
 - Maven 3.6+
 - Lombok
 - MySQL 8 (with database `buzz` created)
 
-### Frontend
-- Node.js >= 16
-- npm >= 8
+**Frontend**
 
-## Installation & Running
+### 1. Clone the repository
+Open your terminal and run the following command:
+```bash
+git clone https://github.com/matildaerenius/buzz.git
+cd buzz
+```
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/matildaerenius/buzz.git
-   cd buzz
-   ```
-2. **Start the backend**
-   ```bash
-   cd backend
-   mvn clean install
-   cp src/main/resources/application.properties.example src/main/resources/application.properties
-   # ← Edit src/main/resources/application.properties with your DB credentials
-   mvn spring-boot:run
-   ```
-3. Change into the frontend directory:
-   ```bash
-   cd frontend
-
-## Configuration
-
-Before you run the app, copy the example properties and set your real values:
+### 2. Set up the Backend
+```bash
+cd backend
+mvn clean install
+cp src/main/resources/application.properties.example src/main/resources/application.properties
+```
+> 💡 **Tip:** Edit `src/main/resources/application.properties` with your actual MySQL database credentials before running the application.
 
 ```bash
-cp backend/src/main/resources/application.properties.example \
-   backend/src/main/resources/application.properties
+mvn spring-boot:run
 ```
-## API Reference
 
-| Method   | Path                        | Description                  |
-| ------   | ----------------------------| ---------------------------- |
-| `GET`    | `/api/users`                | List all users               |
-| `POST`   | `/auth/signup`              | Register new user            |
-| `PUT`    | `/users/{id}`               | Update a user                |
-| `DELETE` | `/users/{id}`               | Delete a user                |
-| `GET`    | `/api/posts`                | List all posts               |
-| `POST`   | `/api/posts/user/{userId}`  | Create a new post for a user |
-| `PUT`    | `/api/posts/{id}/user/{uid}`| Toggle save/like post        |
-| `DELETE` | `/api/posts/{id}/user/{uid}`| Delete a post                |
-| `GET`    | `/api/chats`                | List all chats               |
-| `POST`   | `/api/chats`                | Create a new chat            |
-| `GET`    | `/api/chats/{chatId}`       | Get messages from a chat     |
-| …        | …                           | …                            |
+### 3. Set up the Frontend
 
-## Importing Postman Collection
-1. **Run in Postman**
-    - Click on the button “Run in Postman”:  
-   [![Run in Postman](https://run.pstmn.io/button.svg)](https://raw.githubusercontent.com/matildaerenius/Buzz/main/docs/postman-collection.json)
+---
 
-2. **Or import manually**
-   - Open Postman → **Import** → **Link**.
-   - Copy & paste this link:
-     ```
-     https://raw.githubusercontent.com/matildaerenius/buzz/refs/heads/main/docs/Buzz.postman_collection.json
-     ```
-   - Click **Continue** → **Import**
-     
-## Testing
+## 🔌 API Reference
 
-## Future Development
+| Method   | Path                         | Description                  |
+| -------- | ---------------------------- | ---------------------------- |
+| `GET`    | `/api/users`                 | List all users               |
+| `POST`   | `/auth/signup`               | Register new user            |
+| `PUT`    | `/users/{id}`                | Update a user                |
+| `DELETE` | `/users/{id}`                | Delete a user                |
+| `GET`    | `/api/posts`                 | List all posts               |
+| `POST`   | `/api/posts/user/{userId}`   | Create a new post for a user |
+| `PUT`    | `/api/posts/{id}/user/{uid}` | Toggle save/like post        |
+| `DELETE` | `/api/posts/{id}/user/{uid}` | Delete a post                |
+| `GET`    | `/api/chats`                 | List all chats               |
+| `POST`   | `/api/chats`                 | Create a new chat            |
+| `GET`    | `/api/chats/{chatId}`        | Get messages from a chat     |
 
-## Contributing
-- Fork and clone the repository
-- Create a branch: feature/your-feature-name
-- Commit and push following the Conventional Commits specification
-- Open a Pull Request
+---
 
-## License
-MIT © Matilda Erenius
+## 🧪 Testing (Postman)
 
-## Contact
-matildaerenius@hotmail.com · GitHub
+### 1. Run in Postman
+Click on the button below to directly import the collection:  
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://raw.githubusercontent.com/matildaerenius/Buzz/main/docs/postman-collection.json)
+
+### 2. Or import manually
+- Open Postman -> **Import** -> **Link**.
+- Copy and paste this link:
+  ```text
+  https://raw.githubusercontent.com/matildaerenius/buzz/refs/heads/main/docs/Buzz.postman_collection.json
+  ```
+- Click **Continue** -> **Import**
+
+---
+
+## 👩‍💻 Author
+**Matilda Erenius**
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:matildaerenius@hotmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/matildaerenius)
+
+---
+
+## 📄 License
+This project is licensed under the MIT License. © Matilda Erenius
